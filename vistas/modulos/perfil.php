@@ -116,7 +116,7 @@ foreach ($perfiles as $key => $value) {
 
                             <button class="btn btn-warning btnEditarPerfil" idPerfil="' . $value["id"] . '" data-toggle="modal" data-target="#modalEditarPerfil"><i class="fa fa-pencil"></i></button>
 
-                            <button class="btn btn-danger btnEliminarPerfil" idPerfil="' . $value["id"] . '" fotoPerfil="' . $value["foto"] . '"><i class="fa fa-times"></i></button>
+                            
 
                           </div>
 

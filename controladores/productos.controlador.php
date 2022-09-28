@@ -110,7 +110,6 @@ class ControladorProductos
                     "estado"      => 1,
                     "descripcion" => $datos["descripcion"],
                     "precio"      => $datos["precio"],
-                    "foto"        => $rutaFotoPrincipal,
                     "ruta"        => $datos["ruta"],
 
                 );

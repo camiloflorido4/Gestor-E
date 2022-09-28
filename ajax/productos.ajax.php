@@ -71,7 +71,6 @@ class AjaxProductos
             "categoria"   => $this->categoria,
             "precio"      => $this->precio,
             "descripcion" => $this->descripcion,
-            "foto"        => $this->foto,
         );
 
         $respuesta = ControladorProductos::ctrCrearProducto($datos);

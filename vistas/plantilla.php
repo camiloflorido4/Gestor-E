@@ -57,6 +57,7 @@ if (isset($_SESSION["validarSesionBackend"]) && $_SESSION["validarSesionBackend"
             $_GET["ruta"] == "perfil" ||
             $_GET["ruta"] == "salir" ||
             $_GET["ruta"] == "reportes" ||
+            $_GET["ruta"] == "categoria" ||
             $_GET["ruta"] == "productos") {
             include "modulos/" . $_GET["ruta"] . ".php";
 

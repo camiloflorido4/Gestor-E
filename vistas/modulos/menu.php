@@ -9,15 +9,12 @@
                     <li class="menu-title">Opciones</li><!-- /.menu-title -->
                     <li class="">
                         <a href="productos"> <i class="menu-icon fa fa-archive"></i>Productos</a>
-                        <!-- <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-archive"></i><a href="productos">Productos</a></li>
-                        </ul> -->
                     </li>
                     <li class="">
                         <a  href="perfil" > <i class="menu-icon fa fa-user"></i>Perfil</a>
                     </li>
                     <li class="">
-                        <a href="perfil" > <i class="menu-icon fa fa-table"></i>Categoria</a>
+                        <a href="categoria" > <i class="menu-icon fa fa-table"></i>Categoria</a>
                     </li>
 
 

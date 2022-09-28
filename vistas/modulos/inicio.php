@@ -1,37 +1,43 @@
-<div class="content">
-    <div class="animated fadeIn">
-        <div class="row">
-            <div class="col-lg-12">
-
-                <div class="row" >
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarPerfil">
-                                          Nuevo Perfil
-                                    </button>
-                                <a href="perfil" class="btn btn-primary">Perfil</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#ModalAgregarProducto">
-                                          Nuevo Producto
-                                    </button>
-                                <a href="productos" class="btn btn-primary">Productos</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="content" style="">
+  <div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- carrusel -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide holis" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="vistas/img/plantilla/logo.png" class="d-block" width="500" height="300" style="margin: auto;"  alt="...">
             </div>
+          </div>
         </div>
+        <!--/carrusel --->
+        <div class="row" style="padding: 1rem;">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Modulo de Usuarios</h5>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarPerfil">
+                  Nuevo Perfil
+                </button>
+                <a href="perfil" class="btn btn-primary">Perfil</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Modulo Productos</h5>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#ModalAgregarProducto">
+                  Nuevo Producto
+                </button>
+                <a href="productos" class="btn btn-primary">Productos</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <!--=====================================
 MODAL AGREGAR ADMINISTRADOR
@@ -53,7 +59,9 @@ MODAL AGREGAR ADMINISTRADOR
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <center><h4 class="modal-title">Agregar Perfil</h4></center>
+          <center>
+            <h4 class="modal-title">Agregar Perfil</h4>
+          </center>
 
         </div>
 
@@ -85,7 +93,7 @@ MODAL AGREGAR ADMINISTRADOR
 
             <!-- ENTRADA PARA EL EMAIL -->
 
-             <div class="form-group">
+            <div class="form-group">
 
               <div class="input-group">
 
@@ -99,7 +107,7 @@ MODAL AGREGAR ADMINISTRADOR
 
             <!-- ENTRADA PARA LA CONTRASEÑA -->
 
-             <div class="form-group">
+            <div class="form-group">
 
               <div class="input-group">
 
@@ -151,10 +159,10 @@ MODAL AGREGAR ADMINISTRADOR
 
         <?php
 
-$crearPerfil = new ControladorAdministrador();
-$crearPerfil->ctrCrearPerfil();
+        $crearPerfil = new ControladorAdministrador();
+        $crearPerfil->ctrCrearPerfil();
 
-?>
+        ?>
 
       </form>
 
@@ -178,62 +186,64 @@ MODAL AGREGAR PRODUCTO
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-          <center><h5 class="modal-title" id="exampleModalLabel">Nuevo Producto</h5></center>
+        <center>
+          <h5 class="modal-title" id="exampleModalLabel">Nuevo Producto</h5>
+        </center>
       </div>
       <div class="modal-body">
-       <form method="post">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Titulo</span>
+        <form method="post">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Titulo</span>
+            </div>
+            <input type="text" class="form-control" placeholder="titulo" id="titulo" name="titulo" aria-label="Username" aria-describedby="basic-addon1" id="titulo">
           </div>
-          <input type="text" class="form-control" placeholder="titulo" id="titulo" name="titulo" aria-label="Username" aria-describedby="basic-addon1" id="titulo">
-        </div>
 
-        <div class="input-group mb-3">
-          <select class="custom-select categoria " id="categoria" name="categoria">
-            <option selected>Escoger...</option>
-                    <?php
+          <div class="input-group mb-3">
+            <select class="custom-select categoria " id="categoria" name="categoria">
+              <option selected>Escoger...</option>
+              <?php
 
-$item  = null;
-$valor = null;
+              $item  = null;
+              $valor = null;
 
-$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+              $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
-foreach ($categorias as $key => $value) {
+              foreach ($categorias as $key => $value) {
 
-    echo '<option value="' . $value["id"] . '">' . $value["categoria"] . '</option>';
-}
+                echo '<option value="' . $value["id"] . '">' . $value["categoria"] . '</option>';
+              }
 
-?>
+              ?>
 
-          </select>
-          <div class="input-group-append">
-            <label class="input-group-text" for="inputGroupSelect02">Seleccionar</label>
+            </select>
+            <div class="input-group-append">
+              <label class="input-group-text" for="inputGroupSelect02">Seleccionar</label>
+            </div>
           </div>
-        </div>
 
-         <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Descripcion</span>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Descripcion</span>
+            </div>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion" aria-label="Username" aria-describedby="basic-addon1">
           </div>
-          <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
 
-         <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Detalles</span>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Detalles</span>
+            </div>
+            <input type="text" class="form-control" id="detalle" name="detalle" placeholder="Detalles" aria-label="Username" aria-describedby="basic-addon1">
           </div>
-          <input type="text" class="form-control" id="detalle" name="detalle" placeholder="Detalles" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
 
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">precio</span>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">precio</span>
+            </div>
+            <input type="number" class="form-control" name="precio" id="precio" aria-describedby="basic-addon3">
           </div>
-          <input type="number" class="form-control" name="precio" id="precio" aria-describedby="basic-addon3">
-        </div>
-       </form>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
